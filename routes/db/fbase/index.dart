@@ -13,7 +13,7 @@ Future<Response> onRequest(RequestContext context) async{
 Future<Response> _getLists(RequestContext context) async{
   final lists = <Map<String, dynamic>>[];
 
-  await Firestore.instance.collection('tasklists').get().then((event) {
+  await Firestore.instance.collection('tasklist').get().then((event) {
     for(final doc in event){
       lists.add(doc.map);
     }
@@ -27,7 +27,7 @@ Future<Response> _createList(RequestContext context) async{
 
   final list = <String, dynamic>{'name': name};
 
-  final id = Firestore.instance.collection('tasklists').add(list).then((doc) {
+  final id = await Firestore.instance.collection('tasklist').add(list).then((doc) {
     return doc.id;
   });
 
