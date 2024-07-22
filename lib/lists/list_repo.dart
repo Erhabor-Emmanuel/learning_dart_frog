@@ -43,7 +43,7 @@ class TaskList extends Equatable{
   List<Object?> get props => [id, name];
 }
 
-class TaskListReository {
+class TaskListRepository {
 
   /// check in the internal data source for a list with the given id
   Future<TaskList?> listById(String id) async{

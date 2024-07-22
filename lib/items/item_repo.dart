@@ -68,7 +68,7 @@ class TaskItem extends Equatable{
   List<Object?> get props => [id, name];
 }
 
-class TaskItemReository {
+class TaskItemRepository {
 
   /// check in the internal data source for a list with the given id
   Future<TaskItem?> itemById(String id) async{
