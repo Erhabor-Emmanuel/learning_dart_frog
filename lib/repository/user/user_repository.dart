@@ -78,4 +78,11 @@ class UserRepository{
   void deleteUser(String id){
     userDb.remove(id);
   }
+
+  updateUser({
+    required String id,
+    required String? name,
+    required String? username,
+    required String? password,
+  }){}
 }
