@@ -37,9 +37,16 @@ class User extends Equatable{
 class UserRepository{
 
   /// Checks in the database for a user with the provided username and password
-  User userFromCredentials(String username, String password){
+  Future<User?> userFromCredentials(String username, String password) async{
     final hashedPassword = password.hashValue;
 
-    final users = userDb.values.where((user) => user.username == username && user.password == hashedPassword);
+    final users = userDb.values.where(
+        (user) => user.username == username && user.password == hashedPassword,
+    );
+
+    if(users.isNotEmpty){
+      return users.first;
+    }
+    return null;
   }
 }
