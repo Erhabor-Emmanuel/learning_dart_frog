@@ -49,4 +49,33 @@ class UserRepository{
     }
     return null;
   }
+
+  /// Search for a user by id
+  UserFromId(String id){
+    return userDb[id];
+  }
+
+  ///Create a new user
+  Future<String> createUser({
+    required String name,
+    required String username,
+    required String password,
+  }){
+    final id = username.hashValue;
+    final user = User(
+        id: id,
+        name: name,
+        username: username,
+        password: password,
+    );
+
+    userDb[id] = user;
+
+    return Future.value(id);
+  }
+
+  /// Delete a user
+  void deleteUser(String id){
+    userDb.remove(id);
+  }
 }
