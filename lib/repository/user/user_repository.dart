@@ -1,4 +1,14 @@
-class User{
+import 'package:equatable/equatable.dart';
+import 'package:learnfrog_backend/hash_extension.dart';
+import 'package:meta/meta.dart';
+
+@visibleForTesting
+Map<String, User> userDb = {};
+
+/// User's class
+class User extends Equatable{
+
+  /// constructor
   const User({
     required this.id,
     required this.name,
@@ -17,4 +27,19 @@ class User{
 
   /// User's password
   final String password;
+
+  @override
+  List<Object?> get props => [id, name, username, password];
+}
+
+
+/// User's Repository
+class UserRepository{
+
+  /// Checks in the database for a user with the provided username and password
+  User userFromCredentials(String username, String password){
+    final hashedPassword = password.hashValue;
+
+    final users = userDb.values.where((user) => user.username == username && user.password == hashedPassword);
+  }
 }
