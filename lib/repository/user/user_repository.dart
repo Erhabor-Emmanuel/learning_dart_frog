@@ -79,10 +79,26 @@ class UserRepository{
     userDb.remove(id);
   }
 
-  updateUser({
+  /// Update user
+  Future<void>updateUser({
     required String id,
     required String? name,
     required String? username,
     required String? password,
-  }){}
+  }) async{
+    final currentUser = userDb[id];
+
+    if(currentUser == null){
+      return Future.error(Exception('User not found'));
+    }
+    
+    final user = User(
+        id: id,
+        name: name ?? currentUser.name,
+        username: username ?? currentUser.username,
+        password: password ?? currentUser.password,
+    );
+
+    userDb[id] = user;
+  }
 }
