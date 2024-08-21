@@ -191,6 +191,13 @@
             </list>
           </value>
         </entry>
+        <entry key="dart_frog_auth">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog_auth-1.1.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="dart_frog_cli">
           <value>
             <list>
@@ -816,6 +823,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/coverage-1.8.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/crypto-3.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog-1.1.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog_auth-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog_cli-1.2.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog_gen-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_style-2.3.6/lib" />
