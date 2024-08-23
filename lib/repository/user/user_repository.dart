@@ -51,7 +51,7 @@ class UserRepository{
   }
 
   /// Search for a user by id
-  UserFromId(String id){
+  Future<User?> userFromId(String id) async{
     return userDb[id];
   }
 
@@ -62,11 +62,12 @@ class UserRepository{
     required String password,
   }){
     final id = username.hashValue;
+
     final user = User(
         id: id,
         name: name,
         username: username,
-        password: password,
+        password: password.hashValue,
     );
 
     userDb[id] = user;
