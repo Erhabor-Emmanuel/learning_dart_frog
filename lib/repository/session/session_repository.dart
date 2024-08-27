@@ -56,7 +56,7 @@ class SessionRepository{
   }
 
   /// Search a session of a particular token
-  Session? searchFromSession(String token){
+  Session? searchFromToken(String token){
     final session = sessionDb[token];
 
     if(session != null && session.expiryDate.isAfter(DateTime.now())){
