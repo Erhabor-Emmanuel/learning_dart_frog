@@ -92,6 +92,10 @@ class UserRepository{
     if(currentUser == null){
       return Future.error(Exception('User not found'));
     }
+
+    if(password != null){
+      password = password.hashValue;
+    }
     
     final user = User(
         id: id,

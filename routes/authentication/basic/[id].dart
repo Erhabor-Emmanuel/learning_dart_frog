@@ -8,7 +8,8 @@ Future<Response> onRequest(
 ) async{
   return switch(context.request.method){
     HttpMethod.get => _getUser(context, id),
-
+    HttpMethod.patch => _updateUser(context, id),
+    HttpMethod.delete => _deleteUser(context, id),
     _ => Future.value(Response(statusCode: HttpStatus.methodNotAllowed))
   };
 }
@@ -34,8 +35,40 @@ Future<Response> _getUser(RequestContext context, String id) async{
 
 }
 
-// Future<Response>_updateUser(RequestContext context, String id){}
-//
-// Future<Response>_getUser(RequestContext context, String id){}
-//
-// Future<Response>_deleteUser(RequestContext context, String id){}
+Future<Response>_updateUser(RequestContext context, String id) async{
+  final body = await context.request.json() as Map<String, dynamic>;
+  final name = body['name'] as String?;
+  final username = body['username'] as String?;
+  final password = body['password'] as String?;
+
+  /// This is to get the instance of the UserRepository
+  final userRepository = context.read<UserRepository>();
+
+  /// We are using OR because it doesn't mean the user wants to update all the values
+  if(name != null || username != null || password != null){
+    await userRepository.updateUser(
+        id: id,
+        name: name,
+        username: username,
+        password: password,
+    );
+    return Response(statusCode: HttpStatus.noContent);
+  }else{
+    return Response(statusCode: HttpStatus.badRequest);
+  }
+}
+
+Future<Response>_deleteUser(RequestContext context, String id) async{
+  final user = await context.read<UserRepository>().userFromId(id);
+
+  if(user == null){
+    return Response(statusCode: HttpStatus.forbidden);
+  }else{
+    if(user.id != id){
+      return Response(statusCode: HttpStatus.forbidden);
+    }
+    context.read<UserRepository>().deleteUser(id);
+
+    return Response(statusCode: HttpStatus.noContent);
+  }
+}
