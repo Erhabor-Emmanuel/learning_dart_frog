@@ -212,6 +212,13 @@
             </list>
           </value>
         </entry>
+        <entry key="dart_frog_web_socket">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog_web_socket-1.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="dart_style">
           <value>
             <list>
@@ -313,7 +320,7 @@
         <entry key="http">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http-1.2.1/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http-1.2.2/lib" />
             </list>
           </value>
         </entry>
@@ -826,6 +833,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog_auth-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog_cli-1.2.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog_gen-2.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_frog_web_socket-1.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_style-2.3.6/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/decimal-2.3.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/equatable-2.0.5/lib" />
@@ -840,7 +848,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/graphs-2.3.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/grpc-3.2.4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hotreloader-4.2.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http-1.2.1/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http-1.2.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http2-2.3.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http_methods-1.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http_multi_server-3.2.1/lib" />
