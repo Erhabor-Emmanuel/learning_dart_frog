@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:dart_frog/dart_frog.dart';
 import 'package:dart_frog_web_socket/dart_frog_web_socket.dart';
 
